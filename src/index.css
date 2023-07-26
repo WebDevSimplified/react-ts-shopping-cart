@@ -1,0 +1,56 @@
+*{
+
+    font-family: 'Castoro Titling', cursive;
+  }
+  body {
+    margin: 0;
+    font-family: 'Castoro Titling', cursive;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+  }
+  .navbar-custom {
+    background-color: rgb(235, 94, 40);
+  }
+  
+  .app-container{
+  background:rgb(204, 197, 185);
+  color:rgb(64, 61, 57);
+  max-width: auto;
+  max-height: auto;
+  
+  }
+  
+  footer{
+    grid-area:footer;
+    background: rgb(235, 94, 40);
+  color:rgb(64, 61, 57);
+  
+  }
+  table,th,td {
+    
+    text-align: center;
+    border-collapse: collapse;
+  
+  } 
+  /* .container{
+  columns:2 auto;
+  }
+   */
+   .carousel .slide { display: flex; justify-content: center; }
+   .carousel-container {
+    max-width: 100%;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+  .carousel-image {
+    width: 75%;
+    height: auto;
+    object-fit: cover;
+  }
+   .logo{
+    border-style: outset ;
+    box-shadow: 0 3px 10px
+  
+  }

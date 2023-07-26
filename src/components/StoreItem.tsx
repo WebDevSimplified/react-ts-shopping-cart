@@ -1,30 +1,32 @@
-import { Button, Card } from "react-bootstrap"
-import { useShoppingCart } from "../context/ShoppingCartContext"
-import { formatCurrency } from "../utilities/formatCurrency"
+import { Button, Card } from "react-bootstrap";
+import { useShoppingCart } from "../context/ShoppingCartContext";
+import { formatCurrency } from "../utilities/formatCurrency";
+import { Link, useNavigate } from "react-router-dom";
 
 type StoreItemProps = {
-  id: number
-  name: string
-  price: number
-  imgUrl: string
-}
+  id: number;
+  name: string;
+  price: number;
+  pic: string;
+};
 
-export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
-  const {
-    getItemQuantity,
-    increaseCartQuantity,
-    decreaseCartQuantity,
-    removeFromCart,
-  } = useShoppingCart()
-  const quantity = getItemQuantity(id)
+export function StoreItem({ id, name, price, pic }: StoreItemProps) {
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useShoppingCart();
+  const quantity = getItemQuantity(id);
+  const navigate = useNavigate();
+
+  const handleImageClick = () => {
+    navigate(`/Orders/${id}`);
+  };
 
   return (
     <Card className="h-100">
       <Card.Img
+        onClick={handleImageClick} // Added onClick event to navigate to Orders screen
         variant="top"
-        src={imgUrl}
+        src={pic}
         height="200px"
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: "cover", cursor: "pointer" }} // Added cursor pointer to indicate it's clickable
       />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
@@ -37,25 +39,15 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
               + Add To Cart
             </Button>
           ) : (
-            <div
-              className="d-flex align-items-center flex-column"
-              style={{ gap: ".5rem" }}
-            >
-              <div
-                className="d-flex align-items-center justify-content-center"
-                style={{ gap: ".5rem" }}
-              >
+            <div className="d-flex align-items-center flex-column" style={{ gap: ".5rem" }}>
+              <div className="d-flex align-items-center justify-content-center" style={{ gap: ".5rem" }}>
                 <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
                 <div>
                   <span className="fs-3">{quantity}</span> in cart
                 </div>
                 <Button onClick={() => increaseCartQuantity(id)}>+</Button>
               </div>
-              <Button
-                onClick={() => removeFromCart(id)}
-                variant="danger"
-                size="sm"
-              >
+              <Button onClick={() => removeFromCart(id)} variant="danger" size="sm">
                 Remove
               </Button>
             </div>
@@ -63,5 +55,5 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
         </div>
       </Card.Body>
     </Card>
-  )
+  );
 }

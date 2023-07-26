@@ -1,8 +1,11 @@
-import { Offcanvas, Stack } from "react-bootstrap"
+import { Button, Offcanvas, Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
-import { formatCurrency } from "../utilities/formatCurrency"
+import { formatCurrency, formatCurrency2 } from "../utilities/formatCurrency"
 import { CartItem } from "./CartItem"
 import storeItems from "../data/items.json"
+import { clearSession } from "../hooks/useLocalStorage"
+import PayButton from "./PayButton"
+
 
 type ShoppingCartProps = {
   isOpen: boolean
@@ -10,6 +13,7 @@ type ShoppingCartProps = {
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const { closeCart, cartItems } = useShoppingCart()
+
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header closeButton>
@@ -18,7 +22,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
       <Offcanvas.Body>
         <Stack gap={3}>
           {cartItems.map(item => (
-            <CartItem key={item.id} {...item} />
+            <CartItem key={item.id} {...item}/>
           ))}
           <div className="ms-auto fw-bold fs-5">
             Total{" "}
@@ -29,6 +33,11 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
               }, 0)
             )}
           </div>
+          <Button onClick={clearSession}>Reset</Button>
+         <PayButton cartItems={cartItems}/>
+          {/* <form action="/create-checkout-session" method="POST">
+          <Button type="submit">Checkout</Button>
+          </form> */}
         </Stack>
       </Offcanvas.Body>
     </Offcanvas>

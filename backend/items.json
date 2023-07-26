@@ -2,7 +2,7 @@
   { 
     "id":1,
     "pic":"/imgs/ca1.jpeg",
-     "name":"Jamaican Black Cake",
+     "name":"Jamaican rum cake",
    "description":"Jamaican rum cake is a delectable dessert that exudes an air of romance with its rich and decadent flavors. The moist cake is infused with a heady mixture of dark rum and fragrant spices, creating a complex and indulgent taste sensation that lingers on the palate. With each bite, the sweetness of the cake is perfectly balanced by the warmth and depth of the rum, creating a harmonious union that is nothing short of pure bliss. The dark, caramelized exterior gives way to a tender and flavorful interior that is the perfect treat for a romantic evening or a special occasion.",
      "price":60
     },
@@ -58,13 +58,13 @@
   { 
     "id":9,
     "pic":"/imgs//ca9.jpeg",
-     "name":"Jamaican Rum Cake",
+     "name":"Yellow Cake",
   "description":"As you cut into the soft and fluffy Yellow Cake, a sweet and comforting aroma fills the air, reminiscent of childhood memories and happy moments. The delicate crumb of the cake melts in your mouth, releasing a buttery flavor thats perfectly balanced with a hint of vanilla. Every bite is like a warm embrace, comforting and sweet, making you feel like you are wrapped in a soft blanket of love.",
   "price":60
 },
   { 
     "id":10,
-    "pic":"/imgs/ca10.jpeg",
+    "pic":"/imgs/ca10.jpe",
      "name":"Pound Loaf",
     "description":"The pound loaf is a magnificent creation, its golden crust shining like the sun on a summers day. With every slice, the rich aroma of freshly baked bread fills the air, enchanting the senses and stirring the soul. The texture is soft and delicate, yet firm and hearty, a perfect blend of strength and tenderness. Each bite is a journey through a world of flavor, a symphony of buttery sweetness and subtle spices that dance on the tongue. The pound loaf is a true masterpiece, a testament to the power of love and the artistry of the baker who crafted it with care and passion.",
     "price":60
