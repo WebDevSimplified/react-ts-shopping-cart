@@ -1,5 +1,5 @@
 require('dotenv').config();
-const stripe = require('stripe')(process.env.STRIPE_KEY);
+const Stripe = require('stripe')(process.env.STRIPE_KEY);
 
 const express = require('express');
 const router = express.Router();
@@ -29,7 +29,7 @@ router.post('/create-checkout-session', async (req, res) => {
     };
   });
  try{
-  const session = await stripe.checkout.sessions.create({
+  const session = await Stripe.checkout.sessions.create({
      payment_method_types: ["card"],
     shipping_address_collection: {
       allowed_countries: ["US", "CA"],
@@ -80,6 +80,9 @@ router.post('/create-checkout-session', async (req, res) => {
     ],
     phone_number_collection: {
       enabled: true,
+    },
+    automatic_tax:{
+      enabled:true,
     },
     line_items,
     mode: 'payment',
