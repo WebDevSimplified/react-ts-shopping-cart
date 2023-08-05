@@ -16,15 +16,15 @@ const Home = () => {
         <div className='carousel-container'>
           <Carousel activeIndex={index} onSelect={handleSelect} fade>
             <Carousel.Item>
-              <img className="carousel-image" src='/imgs/ca20.jpg' alt="First slide" />
+              <img className="carousel-image" src='../dist/imgs/ca20.jpg' alt="First slide" />
              
             </Carousel.Item>
             <Carousel.Item>
-              <img className="carousel-image" src="/imgs/ca21.jpg" alt="Second slide" />
+              <img className="carousel-image" src="../dist/imgs/ca21.jpg" alt="Second slide" />
               
             </Carousel.Item>
             <Carousel.Item>
-              <img className="carousel-image" src="/imgs/ca22.jpeg" alt="Third slide" />
+              <img className="carousel-image" src="../dist/imgs/ca22.jpeg" alt="Third slide" />
              
             </Carousel.Item>
           </Carousel>

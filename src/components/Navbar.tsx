@@ -14,7 +14,7 @@ export function Navbar(){
     <NavbarBs.Brand href="#home" className='ml-auto'>
                   <img
                     alt="logo"
-                src="../public/imgs/logo.svg"
+                src="../dist/imgs/logo.svg"
                     width="50"
                     height="50"
                     className=" d-inline-block align-top logo"
