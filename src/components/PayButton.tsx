@@ -29,7 +29,7 @@ const PayButton = ({ cartItems }: PayButtonProps) => {
           console.log("description:", item.description);
           console.log("pic:", item.pic);
           console.log(cartItem.quantity);
-          axios.post("http://localhost:1000/api/stripe/create-checkout-session", {
+          axios.post("https://cmh-cakes-0fce59684fcc.herokuapp.com/api/stripe/create-checkout-session", {
             itemId: item.id,
             itemName: item.name,
             itemPrice: item.price,

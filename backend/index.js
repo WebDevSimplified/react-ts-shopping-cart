@@ -12,7 +12,7 @@ app.get("/",(req,res)=>{
 });
 
 
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT|| PORT, () => {
       console.log(`Server is running on port ${process.env.PORT}`);
     });
 
